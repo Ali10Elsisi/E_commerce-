@@ -4,6 +4,7 @@ let getAllProduct = async(req, res) => {
 }
 let createProduct = async(req, res) => {
     try {
+        req.user;
         res.send(await Product.create(req.body));
     } catch (error) {
         res.send(error, 400);

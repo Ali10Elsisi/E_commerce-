@@ -1,9 +1,14 @@
 let mongoose = require('mongoose');
 let express = require('express');
 let app = express();
+
+let product = require('./routes/product')
+let category = require('./routes/category')
+let auth = require('./middleware/auth')
 let product = require('./routes/product');
 let category = require('./routes/category');
 const cart = require("./routes/cart");
+
 let user = require('./routes/user')
 let bcrypt = require('bcryptjs');
 let jwt = require('jsonwebtoken');
