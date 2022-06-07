@@ -3,6 +3,7 @@ let express = require('express');
 let app = express();
 let product = require('./routes/product')
 let category = require('./routes/category')
+let auth = require('./middleware/auth')
 let user = require('./routes/user')
 let bcrypt = require('bcryptjs');
 let jwt = require('jsonwebtoken');
