@@ -1,8 +1,9 @@
 let mongoose = require('mongoose');
 let express = require('express');
 let app = express();
-let product = require('./routes/product')
-let category = require('./routes/category')
+let product = require('./routes/product');
+let category = require('./routes/category');
+const cart = require("./routes/cart");
 let user = require('./routes/user')
 let bcrypt = require('bcryptjs');
 let jwt = require('jsonwebtoken');
@@ -26,6 +27,9 @@ app.post('/login', async(req, res) => {
 
 
 
+
+
+app.use('/cart',cart);
 app.use('/product', product);
 app.use('/category', category);
 app.use('/user', user);
