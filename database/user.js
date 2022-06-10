@@ -1,3 +1,4 @@
+const { string } = require('joi');
 let mongoose = require('mongoose');
 
 let userSchema = new mongoose.Schema({
@@ -8,7 +9,15 @@ let userSchema = new mongoose.Schema({
         maxlength: 15,
     },
     email: String,
-    password: String
+    password: String,
+    tokens:[
+        {
+            tkoken:{
+                type:string,
+                required:true
+            }
+        }
+    ]
 })
 
 

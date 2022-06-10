@@ -3,8 +3,10 @@ let userSchema = require('../database/user');
 let bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-userSchema.methods.generateAuthToken = function() {
+userSchema.methods.generateAuthToken =async function() {
     let token = jwt.sign({ _id: this._id.toString() }, 'thisismysecretkey');
+    this.tokens.push({token});
+    await this.save();
     return token;
 }
 
