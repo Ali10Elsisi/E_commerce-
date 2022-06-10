@@ -3,6 +3,7 @@ let express = require('express');
 let app = express();
 let product = require('./routes/product')
 let category = require('./routes/category')
+let order = require('./routes/order');
 let user = require('./routes/user')
 let bcrypt = require('bcryptjs');
 let jwt = require('jsonwebtoken');
@@ -29,5 +30,5 @@ app.post('/login', async(req, res) => {
 app.use('/product', product);
 app.use('/category', category);
 app.use('/user', user);
-
+app.use('/order',order);
 app.listen(5000)
