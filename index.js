@@ -4,10 +4,14 @@ let app = express();
 
 let product = require('./routes/product')
 let category = require('./routes/category')
+
+let order = require('./routes/order');
+
 let auth = require('./middleware/auth')
 let product = require('./routes/product');
 let category = require('./routes/category');
 const cart = require("./routes/cart");
+
 
 let user = require('./routes/user')
 let bcrypt = require('bcryptjs');
@@ -38,5 +42,5 @@ app.use('/cart',cart);
 app.use('/product', product);
 app.use('/category', category);
 app.use('/user', user);
-
+app.use('/order',order);
 app.listen(5000)
