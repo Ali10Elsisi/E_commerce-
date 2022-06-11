@@ -13,8 +13,9 @@ let userSchema = new mongoose.Schema({
     tokens:[
         {
             tkoken:{
-                type:string,
-                required:true
+                type:String,
+                required:true,
+                
             }
         }
     ]

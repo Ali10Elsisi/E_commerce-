@@ -2,19 +2,19 @@ const { string } = require('joi');
 const mongoose =require('mongoose');
 const cartSchema =mongoose.Schema({
     product_id :{
-        type:string,
+        type:String,
         required:true
     },
     price:{
-        type:string,
+        type:String,
         required:true
     },
     vendor_id:{
-        type:string,
+        type:String,
         required:true
     },
     store_id:{
-        type:string,
+        type:String,
         required:true
     }
 })
