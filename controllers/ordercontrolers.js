@@ -1,6 +1,12 @@
 let order = require('../models/order');
+let {
+    verifyToken,
+    verifyTokenAndAuthorization,
+    verifyTokenAndAdmin,
+  } = require("../routes/verifyToken");
+
 let createOrder = ("/", verifyToken, async(req, res) => {
-    let newOrder = new Order(req.body);
+    let newOrder = new order(req.body);
     try {
         let savedOrder = await newOrder.save();
         res.status(200).json(savedOrder);
