@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let ordercontrollers = require('../controllers/ordercontrollers');
+let ordercontrollers = require('../controllers/ordercontrolers');
 router.get('/', ordercontrollers.getAllOrder)
 router.get('/find/:userId', ordercontrollers.getUserOrder)
 

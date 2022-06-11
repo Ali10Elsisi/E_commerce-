@@ -3,6 +3,7 @@ let express = require('express');
 let app = express();
 
 let product = require('./routes/product');
+let order = require('./routes/order');
 let category = require('./routes/category');
 let auth = require('./middleware/auth');
 const cart = require("./routes/cart");
@@ -33,9 +34,9 @@ app.post('/login', async(req, res) => {
 
 
 
-app.use('/cart',cart);
+app.use('/cart', cart);
 app.use('/product', product);
 app.use('/category', category);
 app.use('/user', user);
-app.use('/order',order);
+app.use('/order', order);
 app.listen(5000)
