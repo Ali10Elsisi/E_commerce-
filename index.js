@@ -7,6 +7,7 @@ let category = require('./routes/category');
 let auth = require('./middleware/auth');
 const cart = require("./routes/cart");
 
+
 let user = require('./routes/user')
 let bcrypt = require('bcryptjs');
 let jwt = require('jsonwebtoken');
@@ -36,5 +37,5 @@ app.use('/cart',cart);
 app.use('/product', product);
 app.use('/category', category);
 app.use('/user', user);
-
+app.use('/order',order);
 app.listen(5000)
