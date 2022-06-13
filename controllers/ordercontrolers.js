@@ -3,7 +3,7 @@ let {
     verifyToken,
     verifyTokenAndAuthorization,
     verifyTokenAndAdmin,
-  } = require("../routes/verifyToken");
+} = require("../routes/verifyToken");
 
 let createOrder = ("/", verifyToken, async(req, res) => {
     let newOrder = new order(req.body);

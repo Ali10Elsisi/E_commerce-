@@ -10,15 +10,13 @@ let userSchema = new mongoose.Schema({
     },
     email: String,
     password: String,
-    tokens:[
-        {
-            tkoken:{
-                type:String,
-                required:true,
-                
-            }
+    tokens: [{
+        tkoken: {
+            type: String,
+            required: true,
+
         }
-    ]
+    }]
 })
 
 

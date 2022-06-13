@@ -26,7 +26,7 @@ let deleteUser = async(req, res) => {
 }
 
 let editUser = async(req, res) => {
-    res.send(await User.findByIdAndUpdate(req.params.id, req.body));
+    res.send(await User.findByIdAndUpdate(req.params.id, {...req.body, password: await bcrypt.hash(req.body.password, 8) }));
 }
 
 module.exports = {
